@@ -1,4 +1,0 @@
-this.setHeldItem(Game1.player.addItemToInventory(this.takeHeldItem()));
-
-IsEquippedItem
-this.trinketItems
