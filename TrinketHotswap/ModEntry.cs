@@ -1,6 +1,7 @@
 ﻿using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
+using StardewValley.Constants;
 using StardewValley.Objects.Trinkets;
 
 namespace TrinketHotswap
@@ -25,7 +26,7 @@ namespace TrinketHotswap
                 return;
 
             // Check right click
-            if (Game1.player.CurrentItem is Trinket && e.Button.IsActionButton())
+            if (e.Button.IsActionButton() && Game1.player.CurrentItem is Trinket && Game1.player.stats.Get(StatKeys.Mastery(4)) != 0)
             {
                 Trinket held = (Trinket)Game1.player.CurrentItem;
                 Trinket? equipped = Game1.player.trinketItems.ElementAtOrDefault(0);
@@ -38,6 +39,8 @@ namespace TrinketHotswap
                 Game1.player.addItemToInventory(equipped, idx); // If equipped null, nothing happens
 
                 Game1.player.playNearbySoundAll("pickUpItem");
+
+                Monitor.LogOnce("Swapped trinket", LogLevel.Trace);
             }
         }
     }
