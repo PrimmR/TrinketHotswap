@@ -1,0 +1,10 @@
+{
+  "Name": "Trinket Hotswap",
+  "Author": "Primm",
+  "Version": "0.0.1",
+  "Description": "Swap equipped trinkets on the fly",
+  "UniqueID": "Primm.TrinketHotswap",
+  "EntryDll": "TrinketHotswap.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": []
+}
