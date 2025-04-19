@@ -33,8 +33,8 @@ namespace TrinketHotswap
                 int idx = Game1.player.getIndexOfInventoryItem(held);
 
                 // Swap held and equipped
-                Game1.player.trinketItems.Clear();
-                Game1.player.trinketItems.Add(held);
+                Game1.player.trinketItems.RemoveAt(0);
+                Game1.player.trinketItems.Insert(0, held);
                 Game1.player.removeItemFromInventory(held);
                 Game1.player.addItemToInventory(equipped, idx); // If equipped null, nothing happens
 
